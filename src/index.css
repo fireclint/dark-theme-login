@@ -1,13 +1,167 @@
-body {
+
+:root {
+  --background: #ffffff;
+  --text-primary: #000;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #333;
+  --form-bg: #fff;
+}
+
+[data-theme='dark'] {
+  --background: #000;
+  --text-primary: #fff;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #808080;
+  --form-bg: #191919;
+}
+
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: var(--text-secondary);
+}
+
+.app {
+  background-color: var(--background);
+  color: var(--text-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .8rem;
+  transition: all .5s;
+}
+
+.login h1 {
+  text-align: center;
+  margin: -6rem 0 2rem;
+  font-size: 48px;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem;
+}
+
+.theme-toggle i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  width: 300px;
+  margin: auto;
+  box-shadow: 0px 0px 12px var(--border);
+  border-radius: 8px;
+  background-color: var(--form-bg);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top i {
+  font-size: 1rem;
+}
+
+.divider {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--text-primary);
+  line-height: .1rem;
+  margin: 2rem 0;
+}
+
+span {
+  padding: 0 10px;
+  background-color: var(--form-bg);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+input[type=checkbox]:checked {
+  margin: 0;
+  padding: 0;
+}
+
+.remember p {
+  padding-left: 8px;
+}
+
+button {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+  margin: 16px 0;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: .8rem;
+}
+
+.create {
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width:478px) {
+  .login {
+    width: 95%;
+  }
 }
